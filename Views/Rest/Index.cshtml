@@ -1,0 +1,45 @@
+﻿<div>
+    <h1>Write a new Review:</h1>
+</div>
+
+<div id="form-wrapper">
+@model Rest.Models.RestViewModel
+    <form asp-controller="Rest" asp-action="addReview" method="post">
+        <table>
+            <tr>
+                <td><label asp-for="name"></label></td>
+                <td><input class="form-control" asp-for="name"></td>
+                <td>&nbsp;&nbsp;<span asp-validation-for="name"></span></td>
+                <td></td>
+                <td></td>
+                <td><label asp-for="stars"></label></td>
+                <td><select class="form-control" asp-for="stars">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select></td>
+                <td>&nbsp;&nbsp;<span asp-validation-for="stars"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="rest_name"></label></td>
+                <td><input class="form-control" asp-for="rest_name"></td>
+                <td>&nbsp;&nbsp;<span asp-validation-for="rest_name"></span></td>
+            </tr>
+            <tr>
+                <td><label asp-for="review"></label></td>
+                <td><textarea class="form-control" type="text" asp-for="review" cols="30" rows="10"></textarea></td>
+                <td>&nbsp;&nbsp;<span asp-validation-for="review"></span></td>
+            </tr>
+                <td><label asp-for="date"></label></td>
+                <td><input class="form-control" type="date" asp-for="date"></td>
+                <td>&nbsp;&nbsp;<span asp-validation-for="date"></span></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><button style="float: right;" type="submit" class="btn btn-primary">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</div>

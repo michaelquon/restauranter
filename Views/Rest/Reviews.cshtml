@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    @using Rest.Models
+<div>
+    @foreach (var review in ViewBag.reviews){
+        <h3 id="rest_name"><strong>Review for:</strong> @review.rest_name</h3>
+    <h3 id="stars">&nbsp;&nbsp;&nbsp;&nbsp;@review.stars star</h3>
+    <h4><strong>Reviewer:</strong> @review.name, @review.date.ToString("MMM d, yyyy")</h4>
+    <br>
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@review.review</h4>
+    <hr>
+    }
+</div>
+</body>
+</html>
